@@ -49,6 +49,8 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
                 document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
                 if (scores[activePlayer] >= 100) {
                         document.querySelector('#name-0-' + activePlayer).textContent = 'Vencedor';
+                        document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
+                        document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
                 }
 
                 roundScore = 0;
@@ -58,6 +60,8 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
                 document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
                 if (scores[activePlayer] >= 100) {
                         document.querySelector('#name-0-' + activePlayer).textContent = 'Vencedor';
+                        document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
+                        document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
                 }
                 roundScore = 0;
                 activePlayer = 0;
