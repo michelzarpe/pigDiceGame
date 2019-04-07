@@ -48,7 +48,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
                 scores[activePlayer] = scores[activePlayer] + roundScore;
                 document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
                 if (scores[activePlayer] >= 100) {
-                        document.querySelector('#name-0-' + activePlayer).textContent = 'Vencedor';
+                        document.querySelector('#name-' + activePlayer).textContent = 'Vencedor';
                         document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
                         document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
                 }
@@ -59,7 +59,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
                 scores[activePlayer] = scores[activePlayer] + roundScore;
                 document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
                 if (scores[activePlayer] >= 100) {
-                        document.querySelector('#name-0-' + activePlayer).textContent = 'Vencedor';
+                        document.querySelector('#name-' + activePlayer).textContent = 'Vencedor';
                         document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
                         document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
                 }
@@ -78,9 +78,18 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
 
 document.querySelector('.btn-new').addEventListener('click', function () {
+        iniciar(); 
+})
+
+
+
+
+function iniciar(){
         scores = [0, 0];
         roundScore = 0;
         activePlayer = 0;
+        document.querySelector('#name-0').textContent = 'Jogador 1';
+        document.querySelector('#name-1').textContent = 'Jogador 2';
         document.querySelector('#score-0').textContent = '0';
         document.querySelector('#score-1').textContent = '0';
         document.querySelector('#current-0').textContent = '0';
@@ -88,12 +97,7 @@ document.querySelector('.btn-new').addEventListener('click', function () {
         document.querySelector('.player-0-panel').classList.toggle('active');
         document.querySelector('.player-1-panel').classList.toggle('active');
         document.querySelector('.dice').style.display = 'none';
-})
-
-
-
-
-
+}
 
 
 
